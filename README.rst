@@ -61,6 +61,14 @@ Only limited set of commands and options are supported now:
 * none_images - helper method to get "dangling" images
 
 
+Install
+-------
+
+.. code::
+
+    pip install fabric-docker
+
+
 Usage
 -----
 
