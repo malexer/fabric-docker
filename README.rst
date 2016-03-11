@@ -8,15 +8,21 @@ Can be used both in local and remote modes (via subprocess or ssh).
 Method names and options try to use the same names as related docker-engine
 commands and options.
 
-So, it is mainly a helper to write::
+So, it is mainly a helper to write:
+
+.. code-block:: python
 
     docker.ps(all=True, size=True)
 
-instead of::
+instead of:
+
+.. code-block:: python
 
     run('docker ps --all --size')
 
-With some nice use cases::
+With some nice use cases:
+
+.. code-block:: python
 
     # remove dangling images "<none>:<none>"
     docker.rmi(docker.none_images())
@@ -58,7 +64,9 @@ Only limited set of commands and options are supported now:
 Usage
 -----
 
-Create instance to use locally with sudo::
+Create instance to use locally with sudo:
+
+.. code-block:: python
 
     import fabric_docker
 
@@ -66,19 +74,27 @@ Create instance to use locally with sudo::
     # any command can override this default settings by suppling
     # "local" and "sudo" key-value arguments
 
-List all local containers::
+List all local containers:
+
+.. code-block:: python
 
     docker.ps(all=True)
 
-Remove latest container::
+Remove latest container:
+
+.. code-block:: python
 
     docker.rm(docker.ps(latest=True))
 
-List remote images (override default local flag)::
+List remote images (override default local flag):
+
+.. code-block:: python
 
     docker.images(no_truncate=True, local=False)
 
-Run remote container::
+Run remote container:
+
+.. code-block:: python
 
     docker.run(
         detach=True,
